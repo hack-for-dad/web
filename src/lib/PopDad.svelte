@@ -1,24 +1,22 @@
 <script>
     import { onMount } from 'svelte';
-  
     let counter = 0;
   
-    function handleClick() {
+    function handleClick(e) {
       counter++;
+      e.target.style.width = e.target.width * 1.01 + 'px';
+        e.target.style.height = e.target.height * 1.01 + 'px';
     }
   
     onMount(() => {
       document.addEventListener('keydown', handleClick);
     });
-  
-    function handleReset() {
-      counter = 0;
-    }
+
   </script>
   
   <main>
     <h1>Popcat-like Game</h1>
-    <button on:click={handleClick} class="nine-button">๙</button>
+    <img on:click={handleClick} src="/o.jpg" alt="">
     <p>Counter: {counter}</p>
   </main>
   
@@ -58,6 +56,9 @@
         padding-left: 2.5rem;
         padding-right: 2.5rem;
         border-radius: 1rem;
+    }
+    img {
+      border-radius: 25px;
     }
   </style>
   

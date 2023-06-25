@@ -1,7 +1,6 @@
 <script lang="ts"> 
-  import data from "./assets/dadImage.json";
   import Dad2048 from "./lib/Dad2048.svelte";
-    import PopDad from "./lib/PopDad.svelte";
+  import PopDad from "./lib/PopDad.svelte";
 
   let image_url = "";
 
@@ -63,9 +62,11 @@
     </div>
   
     <p></p>
-    <button class="download-button" on:click={downloadExtension}>
-      Download Extension!
-    </button>
+    <a href="https://github.com/hack-for-dad/extension-chrome/releases/tag/1.0.0">
+      <button class="download-button" on:click={downloadExtension}>
+        Download Extension!
+      </button>
+    </a>
   </div>
 </body>
 
